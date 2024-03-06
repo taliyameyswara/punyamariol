@@ -408,6 +408,7 @@ button[type="submit"]:hover {
 .footer-content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .footer-menu {
