@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dapur Akia - Detail Artikel</title>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <nav>
+      <div class="container">
+        <div class="logo">
+          <h1>
+            <a href="index.html">Dapur Akia</a>
+          </h1>
+        </div>
+        <ul>
+          <li><a href="index.html#tips">Tips Memasak</a></li>
+          <li><a href="ulasan.html">Ulasan Restoran</a></li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">
+                Resep
+                <img src="/assets/img/down.svg" style="width: 15px" alt="" />
+              </button>
+              <div class="dropdown-content">
+                <a href="resep-tradisional.html" class="dropdown-item"
+                  >Resep Tradisional</a
+                >
+                <a href="resep-cepatsaji.html" class="dropdown-item"
+                  >Resep Cepat Saji</a
+                >
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <section id="resep">
+      <div class="container">
+        <div class="title">
+          <h1>Resep Cepat Saji</h1>
+          <p style="color: var(--green); font-size: smaller; margin-top: 10px">
+            Resep makanan cepat saji dari berbagai makanan dari luar
+          </p>
+        </div>
+
+        <!-- resep start -->
+        <section id="resepTradisional">
+          <div class="container">
+            <div class="card-container-resep" id="resepCepatSaji">
+              <!-- card -->
+            </div>
+          </div>
+        </section>
+        <!-- resep end -->
+      </div>
+    </section>
+
+    <!-- footer start -->
+    <footer>Copyright © 2023 | Design By Itsna Maulana Hasan</footer>
+    <!-- footer end -->
+  </body>
+
+  <!-- <script src="./assets/js/script.js"></script> -->
+  <script>
+    // resep tradisional
+    // Objek resep makanan
+    let cepatSaji = [
+      {
+        judul: "Burger Cheese",
+        detail:
+          "Burger Cheese adalah burger klasik yang terdiri dari roti burger, patty daging sapi, keju leleh, irisan tomat, selada, dan saus burger.",
+        gambar: "assets/img/burger.jpeg",
+      },
+      {
+        judul: "Kentang Goreng",
+        detail:
+          "Kentang Goreng adalah hidangan kentang yang dipotong tipis dan digoreng hingga crispy. ",
+        gambar: "assets/img/kentang.jpeg",
+      },
+      {
+        judul: "Nugget Ayam",
+        detail:
+          "Nugget Ayam adalah camilan favorit yang terbuat dari daging ayam cincang yang dibentuk, dilapisi tepung roti, dan digoreng hingga kecokelatan. ",
+        gambar: "assets/img/nugget.jpeg",
+      },
+      {
+        judul: "French Fries",
+        detail:
+          "French Fries atau kentang goreng adalah camilan yang terbuat dari kentang yang dipotong panjang dan digoreng hingga renyah.",
+        gambar: "assets/img/kentang.jpeg",
+      },
+    ];
+
+    // Mendapatkan referensi container resep
+    let resepCepatSaji = document.getElementById("resepCepatSaji");
+
+    // Looping melalui objek resep makanan
+    cepatSaji.forEach((resep) => {
+      // Membuat elemen HTML untuk setiap resep
+      let resepElement = document.createElement("div");
+      resepElement.className = "card-artikel";
+      resepElement.innerHTML = `
+        <img src="${resep.gambar}">
+        <div class="card-text-artikel">
+          <a href="#" style="color:#000; font-size:18px">${resep.judul}</a>
+          <p>${resep.detail}</p>
+        </div>
+      `;
+
+      // Menambahkan elemen resep ke dalam container
+      resepCepatSaji.appendChild(resepElement);
+    });
+  </script>
+</html>
